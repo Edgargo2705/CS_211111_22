@@ -2,7 +2,7 @@ import { getData } from "./db.js";
 import Sequelize from "sequelize";
 
 const User = getData.sequelizeClient.define(
-  "dbl_usersdb",
+  "cat_users",
   {
     id: { type: Sequelize.SMALLINT, primaryKey: true },
     username: Sequelize.STRING,
@@ -11,7 +11,9 @@ const User = getData.sequelizeClient.define(
     phone_number: Sequelize.STRING,
   },
   {
-    tableName: "dbl_usersdb",
+    tableName: "cat_users",
+    createdAt: false,
+    updatedAt: false,
   }
 );
 
